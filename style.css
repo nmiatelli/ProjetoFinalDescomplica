@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(./assets/snowflakes-bright-lights.jpg) no-repeat center center/cover;   
+    font-family: "Comfortaa", sans-serif; 
+}
+
+
+.img-empty {
+
+    height: 220px;
+    width: 220px;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.img-empty.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+h1{
+    font-family: "Great Vibes", cursive;
+    color: #FFD700;
+    font-size: 3rem;
+    text-shadow: 5px 5px 20px #FFD700;   
+}
+
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} 
+        
+
+.app-container{
+
+    background-color: rgba(13, 74, 45, 0.922) ;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    color: #fff ;
+    border-radius: 20px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    border: 6px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(5px);
+}
+
+.input-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.input-area input{
+    flex: 1;
+    padding: 10px 17px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(177, 9, 9, 0.854);
+    color: #bcbcbc;
+}
+
+.input-area input::placeholder{
+    color: #bcbcbc;
+}
+
+.input-area input:focus{
+    outline: none;
+    box-shadow:  0 0 10px #FFD700;
+    
+}
+
+.input-area button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    color: #403c3c;
+    font-size: 1.1rem;
+    background: rgba(210, 206, 206, 0.454);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.input-area button:hover{
+    transform: scale(1.1);
+    background: #fff;
+    box-shadow: 0px 0px 10px #FFD700;
+}
+
+.todos-container{
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;           
+    text-align: center;   
+    transition: all 0.2s ease;
+
+    max-height: 300px;        /* altura máxima da área */
+    overflow-y: auto;         /* ativa rolagem vertical */
+    scrollbar-width: none; 
+}
+
+.todos-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todos-container::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+
+#task-list li{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(245, 235, 186, 0.178);
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius:5px;
+    font-size: 1.2rem;
+    color: #fff;
+    position: relative;
+    gap: 10px;
+    
+}
+
+#task-list li:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#task-list li .checkbox{
+    min-width: 20px;
+    height: 20px;
+    border:  2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+  
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#task-list li.checkbox:checked{
+    background: #bcbcbc;
+    text-decoration: line-through;
+}
+
+#task-list li .checkbox:checked::before{
+    
+    color: #fff;
+    dominant-baseline: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+#task-list li span{
+    flex:1;
+    margin-left: 10px;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    min-width: 0;
+    text-align: left;
+}
+
+#task-list li.completed span{
+    text-decoration: 2px line-through #000;
+    color: #000;
+}
+
+.task-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.task-buttons button{
+
+    background-color: transparent;
+    border: none;
+    font-size: 1.3rem;
+    margin-right: auto;
+    cursor: pointer;
+    
+}
+
+.task-buttons button:hover{
+    
+    transform:scale(1.5);
+}
