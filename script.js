@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     const emptyImg = document.querySelector('.img-empty');
     const todosContainer = document.querySelector('.todos-container');
       
-
+    //Tira a imagem ao criar lista de tarefas
     const toggleEmptyState = () => {
         const isEmpty = taskList.children.length === 0;
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     };
 
     
-
+    //Funções de criar e deletar tarefa
     const addTask = (text, completed = false) => {
        
         const taskText = text || taskInput.value.trim();
@@ -61,14 +61,6 @@ document.addEventListener('DOMContentLoaded', () =>{
         });
         
 
-        editBtn.addEventListener('click', () => {
-            if(!checkbox.checked){
-                taskInput.value = li.querySelector('span').textContent; 
-                li.remove();
-                toggleEmptyState();
-            }
-        });
-
         li.querySelector('.delete-btn').addEventListener('click', () => {
             li.remove();
             toggleEmptyState();
@@ -80,6 +72,60 @@ document.addEventListener('DOMContentLoaded', () =>{
         toggleEmptyState();
     };
 
+    //Editar tarefa
+    taskList.addEventListener('click', (e) => {
+        const editBtn = e.target.closest('.edit-btn');
+        if (!editBtn) return;
+
+        const li = editBtn.closest('li');
+        const span = li.querySelector('span');
+
+
+        if(li.classList.contains('editing')){
+            const input = li.querySelector('.edit-input');
+
+            span.textContent = input.value.trim() || 'Tarefa sem nome';
+            li.appendChild(span, input);
+
+            li.classList.remove('editing');
+            editBtn.innerHTML = `<i class="fa-solid fa-pen-nib" style="color: #FFD43B;"></i>
+            `;
+            return;           
+        }
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = span.textContent;
+        input.classList.add('edit-input');
+
+        li.replaceChild(input, span);
+        input.focus();
+        li.classList.add('editing');
+
+        //troca o ícone
+        editBtn.innerHTML=` <i class="fa-regular fa-floppy-disk" style="color: #FFD43B;"></i>`;
+
+        //salva tarefa editada
+        const saveEdit = () => {
+            if(!li.classList.contains('editing')) return;
+
+            span.textContent = input.value.trim() || 'Tarefa sem nome';
+            li.replaceChild(span, input);
+
+            li.classList.remove('editing');
+            editBtn.innerHTML = ` <i class="fa-solid fa-pen-nib" style="color: #FFD43B;"></i>`;
+            
+        };
+
+        input.addEventListener('keydown', (event) => {
+            if(event.key === 'Enter') saveEdit();
+        });
+
+        input.addEventListener('blur', saveEdit);
+
+
+
+    });
   
 
     addTaskBtn.addEventListener('click', () => addTask());
