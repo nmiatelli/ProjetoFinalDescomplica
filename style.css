@@ -34,9 +34,10 @@ body{
 
 h1{
     font-family: "Great Vibes", cursive;
-    color: #FFD700;
+    color: #0d4a2deb;
+    /* fddf5a */
     font-size: 4rem;
-    text-shadow: 5px 5px 20px #FFD700;   
+    text-shadow: 5px 5px 20px hsl(0, 31%, 93%);   
 }
 
 
@@ -50,7 +51,8 @@ h1{
 
 .app-container{
 
-    background-color: rgba(13, 74, 45, 0.922) ;
+    /* background-color: rgba(13, 74, 45, 0.922) ; */
+   
     width: 100%;
     max-width: 600px;
     padding: 2rem;
@@ -62,8 +64,8 @@ h1{
     color: #fff ;
     border-radius: 20px;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
-    border: 6px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(5px);
+    border: 6px solid #fbfaf581;
+    backdrop-filter: blur(2px);
 }
 
 .input-area{
@@ -79,17 +81,17 @@ h1{
     font-size: 1.1rem;
     border: none;
     border-radius: 10px;
-    background: rgba(177, 9, 9, 0.854);
+    background: rgba(177, 9, 9, 0.906);
     color: #bcbcbc;
 }
 
 .input-area input::placeholder{
-    color: #bcbcbc;
+    color: #d7c3c3;
 }
 
 .input-area input:focus{
     outline: none;
-    box-shadow:  0 0 10px #FFD700;
+    box-shadow:  0 0 10px #f2d543;
     
 }
 
@@ -127,26 +129,19 @@ h1{
     scrollbar-width: none; 
 }
 
-.todos-container::-webkit-scrollbar {
-  width: 6px;
-}
 
-.todos-container::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.3);
-  border-radius: 10px;
-}
 
 #task-list li{
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(245, 235, 186, 0.178);
+    background-color: rgba(240, 239, 234, 0.34);
     margin-bottom: 10px;
     padding: 10px 15px;
     border-radius:5px;
     font-size: 1.2rem;
-    color: #fff;
+    color: #070606;
     position: relative;
     gap: 10px;
     
@@ -229,7 +224,7 @@ h1{
 }
 
 .edit-input:focus {
-  border-color: #FFD700;
+  border-color: #0d4a2deb ;
   box-shadow: 0 0 5px #FFD700;
 }
 

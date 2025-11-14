@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             <span>${taskText}</span>
             <div class="task-buttons">
                 <button class="edit-btn">
-                    <i class="fa-solid fa-pen-nib" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-pen-nib" style="color: #0d4a2deb ;"></i>
+    
                 </button>
                 <button class="delete-btn">
                     <i class="fa-regular fa-trash-can" style="color: #a80606ff;"></i>
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             li.appendChild(span, input);
 
             li.classList.remove('editing');
-            editBtn.innerHTML = `<i class="fa-solid fa-pen-nib" style="color: #FFD43B;"></i>
+            editBtn.innerHTML = `<i class="fa-solid fa-pen-nib" style="color: #0d4a2deb ;"></i>
             `;
             return;           
         }
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         li.classList.add('editing');
 
         //troca o ícone
-        editBtn.innerHTML=` <i class="fa-regular fa-floppy-disk" style="color: #FFD43B;"></i>`;
+        editBtn.innerHTML=` <i class="fa-regular fa-floppy-disk" style="color: #0d4a2deb ;"></i>`;
 
         //salva tarefa editada
         const saveEdit = () => {
@@ -113,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             li.replaceChild(span, input);
 
             li.classList.remove('editing');
-            editBtn.innerHTML = ` <i class="fa-solid fa-pen-nib" style="color: #FFD43B;"></i>`;
+            editBtn.innerHTML = ` <i class="fa-solid fa-pen-nib" style="color: #0d4a2deb ;"></i>`;
             
         };
 
