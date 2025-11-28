@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () =>{
     const emptyImg = document.querySelector('.img-empty');
     const todosContainer = document.querySelector('.todos-container');
       
+    // limpar lista
+    const clearListBtn =document.getElementById('clear-list-btn');
+
+
     //Tira a imagem ao criar lista de tarefas
     const toggleEmptyState = () => {
         const isEmpty = taskList.children.length === 0;
@@ -32,11 +36,11 @@ document.addEventListener('DOMContentLoaded', () =>{
             <input type="checkbox" class="checkbox" ${completed ? 'checked' : '' }>
             <span>${taskText}</span>
             <div class="task-buttons">
-                <button class="edit-btn">
+                <button class="edit-btn" title="Editar tarefa">
                     <i class="fa-solid fa-pen-nib" style="color: #0d4a2deb ;"></i>
     
                 </button>
-                <button class="delete-btn">
+                <button class="delete-btn" title="Deletar tarefa">
                     <i class="fa-regular fa-trash-can" style="color: #a80606ff;"></i>
                 </button>
             </div>
@@ -127,6 +131,12 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 
     });
+    
+    // limpar lista
+    const clearList = () => {
+        taskList.innerHTML= "";
+        toggleEmptyState();
+    };    
   
 
     addTaskBtn.addEventListener('click', () => addTask());
@@ -136,4 +146,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             addTask();
         }
     });
+
+    clearListBtn.addEventListener('click', clearList);
+    
 });

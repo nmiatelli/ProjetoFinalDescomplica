@@ -29,6 +29,7 @@ body{
 .img-empty.hidden {
   opacity: 0;
   pointer-events: none;
+  display: none;
 }
 
 
@@ -65,7 +66,7 @@ h1{
     border-radius: 20px;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
     border: 6px solid #fbfaf581;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(20px);
 }
 
 .input-area{
@@ -82,11 +83,12 @@ h1{
     border: none;
     border-radius: 10px;
     background: rgba(177, 9, 9, 0.906);
-    color: #bcbcbc;
+    color: #f7f1f1;
+    
 }
 
 .input-area input::placeholder{
-    color: #d7c3c3;
+    color: #bcbcbc ;
 }
 
 .input-area input:focus{
@@ -99,13 +101,13 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin-left: 5px;
     padding: 8px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     color: #403c3c;
     font-size: 1.1rem;
-    background: rgba(210, 206, 206, 0.454);
+    background: rgba(255, 253, 253, 0.909);
     border: 2px solid rgba(255, 255, 255, 0.18);
     cursor: pointer;
     transition: all 0.2s ease;
@@ -117,8 +119,13 @@ h1{
     box-shadow: 0px 0px 10px #FFD700;
 }
 
+input:focus{
+ outline: none;
+ box-shadow: none;
+}
+
 .todos-container{
-    width: 80%;
+    width: 95%;
     max-width: 500px;
     margin: 0 auto;           
     text-align: center;   
@@ -126,7 +133,10 @@ h1{
 
     max-height: 300px;        /* altura máxima da área */
     overflow-y: auto;         /* ativa rolagem vertical */
-    scrollbar-width: none; 
+    padding-right: 10px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #0d4a2deb rgba(240, 239, 234, 0.2);
 }
 
 
@@ -156,7 +166,6 @@ h1{
     height: 20px;
     border:  2px solid rgba(255, 255, 255, 0.3);
     background: transparent;
-  
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -227,4 +236,6 @@ h1{
   border-color: #0d4a2deb ;
   box-shadow: 0 0 5px #FFD700;
 }
+
+
 
